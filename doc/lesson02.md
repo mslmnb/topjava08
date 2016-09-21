@@ -17,7 +17,7 @@
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 2. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFQndBeWFOa3phRTg">Optional: реализация CRUD</a>
 - **Apply 2-2-HW1-optional.patch**
-- <a href="http://stackoverflow.com/questions/1890438/how-to-get-parameters-from-the-url-with-jsp#1890462">param и другие объекты, доступные в JSP</a>
+- <a href="http://stackoverflow.com/questions/1890438/how-to-get-parameters-from-the-url-with-jsp#1890462">В `mealEdit.jsp` используется параметр запроса `param.action`, он не кладется а аттрибуты.</a>
 - <a href="http://stackoverflow.com/questions/246859/http-1-0-vs-1-1">HTTP 1.0 vs 1.1</a>
 
 > Про repository будет подробно в видео "Слои приложения"
