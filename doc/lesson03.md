@@ -28,7 +28,7 @@
 - <a href="http://stackoverflow.com/questions/21554977/should-services-always-return-dtos-or-can-they-also-return-domain-models">Should services always return DTOs, or can they also return domain models?</a>
 - <a href="http://stackoverflow.com/questions/31644131/spring-dto-dao-resource-entity-mapping-goes-in-which-application-layer-cont/35798539#35798539">Mapping Entity->DTO goes in which application layer: Controller or Service?</a>
 
-### ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Вопросы по HW1
+### ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Вопросы по HW2
 
 >  Какой смысл в `Objects.requireNonNull()`? Если у нас объект == null он бросает NPE (`NullPointException`), но оно вылетит и без этого метода. <a href="http://stackoverflow.com/questions/27511106/what-is-the-purpose-of-objectsrequirenonnull#27511204">What is the purpose of Objects#requireNonNull</a>
 
