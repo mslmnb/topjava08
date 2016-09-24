@@ -59,6 +59,11 @@
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 6. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFVlNYczhnSU9JdXc">Базы данных. Обзор NoSQL и Java persistence solution без ORM.</a>
 -  <a href="https://ru.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>.
 -  <a href="http://java-course.ru/begin/postgresql/">Установка PostgreSQL</a>.
+  
+> Создать в pgAdmin новую базу `topjava` и новую роль `user, пароль password`:
+
+![image](https://cloud.githubusercontent.com/assets/13649199/18809406/118f9c48-8283-11e6-8f10-d8291517a497.png)
+
 -  <a href="http://alexander.holbreich.org/2013/03/nosql-or-rdbms/">NoSQL or RDBMS.</a> <a href="http://habrahabr.ru/post/77909/">Обзор NoSQL систем</a>. <a href="http://blog.nahurst.com/visual-guide-to-nosql-systems">CAP</a>
 -  <a href="http://ru.wikipedia.org/wiki/Java_Database_Connectivity">JDBC</a>
 -  Обзор Java persistence solution без ORM: <a href="http://commons.apache.org/proper/commons-dbutils/">commons-dbutils</a>,
