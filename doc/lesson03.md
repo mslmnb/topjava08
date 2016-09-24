@@ -60,7 +60,7 @@
 -  <a href="https://ru.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>.
 -  <a href="http://java-course.ru/begin/postgresql/">Установка PostgreSQL</a>.
   
-> Создать в pgAdmin новую базу `topjava` и новую роль `user, пароль password`:
+> Создать в pgAdmin новую базу `topjava` и новую роль `user`, пароль `password`
 
 ![image](https://cloud.githubusercontent.com/assets/13649199/18809406/118f9c48-8283-11e6-8f10-d8291517a497.png)
 
