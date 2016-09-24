@@ -59,7 +59,8 @@
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 6. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFVlNYczhnSU9JdXc">Базы данных. Обзор NoSQL и Java persistence solution без ORM.</a>
 -  <a href="https://ru.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>.
 -  <a href="http://java-course.ru/begin/postgresql/">Установка PostgreSQL</a>.
-  
+  -  <a href="http://www.teamlead.ru/pages/viewpage.action?pageId=75465393">Решение проблемы устновки `Problem running post-install step. Installation may not complete correctly. The database cluster inicialisation failed.`</a>
+    
 > Создать в pgAdmin новую базу `topjava` и новую роль `user`, пароль `password`
 
 ![image](https://cloud.githubusercontent.com/assets/13649199/18809406/118f9c48-8283-11e6-8f10-d8291517a497.png)
