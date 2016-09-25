@@ -167,21 +167,21 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 Мы будем использовать Hibernate, по умолчанию он делает глобальный sequence на все таблицы. В этом подходе есть <a href="http://stackoverflow.com/questions/1536479/asking-for-opinions-one-sequence-for-all-tables">как плюсы, так и минусы</a>, из плюсов - удобно делать ссылки в коде и в таблицах на при наследовании и мапы в коде. В дополнение: <a href="http://stackoverflow.com/questions/6633384/can-i-configure-hibernate-to-create-separate-sequence-for-each-table-by-default">Configure Hibernate to create separate sequence for each table by default</a>.
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Домашнее задание HW03
-- Понять, почему перестали работать `SpringMain/InMemoryAdminRestControllerTest/ InMemoryAdminRestControllerSpringTest`
-- Дополнить скрипты создания и инициализации базы таблицой MEALS. Запустить скрипты на вашу базу (через Run). Порядок таблиц при DROP и DELETE важен, если они связаны fk. Проверьте, что ваши скрипты работают
-- Реализовать через Spring JDBC Template `JdbcMealRepositoryImpl`
-  - сделать каждый метод за один SQL запрос
-  - `userId` в класс `Meal` вставлять НЕ надо (для UI и REST это лишние данные, userId это id залогиненного пользователя)
-  - `JbdcTemplate` работает через сеттеры. Вместе с конструктором по умолчанию их нужно добавить в `Meal` 
-  - Cписок еды должен быть отсортирован (тогда мы его сможем сравнивать с тестовыми данными). Кроме того это требуется для UI и API: последняя еда наверху.
-- Проверить работу MealServlet, запустив приложение
+1. Понять, почему перестали работать `SpringMain/InMemoryAdminRestControllerTest/ InMemoryAdminRestControllerSpringTest`
+2. Дополнить скрипты создания и инициализации базы таблицой MEALS. Запустить скрипты на вашу базу (через Run). Порядок таблиц при DROP и DELETE важен, если они связаны fk. Проверьте, что ваши скрипты работают
+3. Реализовать через Spring JDBC Template `JdbcMealRepositoryImpl`
+  3.1. сделать каждый метод за один SQL запрос
+  3.2. `userId` в класс `Meal` вставлять НЕ надо (для UI и REST это лишние данные, userId это id залогиненного пользователя)
+  3.3. `JbdcTemplate` работает через сеттеры. Вместе с конструктором по умолчанию их нужно добавить в `Meal` 
+  3.4. Cписок еды должен быть отсортирован (тогда мы его сможем сравнивать с тестовыми данными). Кроме того это требуется для UI и API: последняя еда наверху.
+4. Проверить работу MealServlet, запустив приложение
 
 #### Optional
 
-- Сделать тестовые данные `MealTestData`, АНАЛОГИЧНЫЕ пропопулированным в `populateDB.sql`. Тестовый класс-обертка к `Meal` не требуется, сравниваем данные через готовый MATCHER (по умолчанию)
-- Сделать `MealServiceTest` из `MealService` (`Ctrl+Shift+T` и выбрать JUnit4) и реализовать тесты.
-- Сделать тесты на чужих юзеров (delete, get, update) с тем чтобы получить `NotFoundException` и тесты на `update` чужой еды.
-- Предложить решение, как почнинить `SpringMain/ InMemory*Test`. `InMemory*Test` предполагает использовать нашу реализацию репозитория в памяти
-- Сделать индексы к таблице `Meals`.
+5. Сделать тестовые данные `MealTestData`, АНАЛОГИЧНЫЕ пропопулированным в `populateDB.sql`. Тестовый класс-обертка к `Meal` не требуется, сравниваем данные через готовый MATCHER (по умолчанию)
+6. Сделать `MealServiceTest` из `MealService` (`Ctrl+Shift+T` и выбрать JUnit4) и реализовать тесты.
+7. Сделать тесты на чужих юзеров (delete, get, update) с тем чтобы получить `NotFoundException` и тесты на `update` чужой еды.
+8. Предложить решение, как почнинить `SpringMain/ InMemory*Test`. `InMemory*Test` предполагает использовать нашу реализацию репозитория в памяти
+9. Сделать индексы к таблице `Meals`.
 - <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">Postgres and Indexes on Foreign Keys and Primary Keys</a>
 - <a href="http://postgresguide.com/performance/indexes.html">Postgres Guide: Indexes</a>
