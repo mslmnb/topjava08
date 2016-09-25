@@ -177,11 +177,11 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 4. Проверить работу MealServlet, запустив приложение
 
 #### Optional
+1. Сделать тестовые данные `MealTestData`, АНАЛОГИЧНЫЕ пропопулированным в `populateDB.sql`. Тестовый класс-обертка к `Meal` не требуется, сравниваем данные через готовый MATCHER (по умолчанию)
+2. Сделать `MealServiceTest` из `MealService` (`Ctrl+Shift+T` и выбрать JUnit4) и реализовать тесты.
+3. Сделать тесты на чужих юзеров (delete, get, update) с тем чтобы получить `NotFoundException` и тесты на `update` чужой еды.
+4. Предложить решение, как почнинить `SpringMain/ InMemory*Test`. `InMemory*Test` предполагает использовать нашу реализацию репозитория в памяти
+5. Сделать индексы к таблице `Meals`.
 
-5. Сделать тестовые данные `MealTestData`, АНАЛОГИЧНЫЕ пропопулированным в `populateDB.sql`. Тестовый класс-обертка к `Meal` не требуется, сравниваем данные через готовый MATCHER (по умолчанию)
-6. Сделать `MealServiceTest` из `MealService` (`Ctrl+Shift+T` и выбрать JUnit4) и реализовать тесты.
-7. Сделать тесты на чужих юзеров (delete, get, update) с тем чтобы получить `NotFoundException` и тесты на `update` чужой еды.
-8. Предложить решение, как почнинить `SpringMain/ InMemory*Test`. `InMemory*Test` предполагает использовать нашу реализацию репозитория в памяти
-9. Сделать индексы к таблице `Meals`.
 - <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">Postgres and Indexes on Foreign Keys and Primary Keys</a>
 - <a href="http://postgresguide.com/performance/indexes.html">Postgres Guide: Indexes</a>
