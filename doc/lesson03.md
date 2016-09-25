@@ -182,6 +182,5 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 3. Сделать тесты на чужих юзеров (delete, get, update) с тем чтобы получить `NotFoundException` и тесты на `update` чужой еды.
 4. Предложить решение, как почнинить `SpringMain/ InMemory*Test`. `InMemory*Test` предполагает использовать нашу реализацию репозитория в памяти
 5. Сделать индексы к таблице `Meals`.
-
-- <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">Postgres and Indexes on Foreign Keys and Primary Keys</a>
-- <a href="http://postgresguide.com/performance/indexes.html">Postgres Guide: Indexes</a>
+  - <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">Postgres and Indexes on Foreign Keys and Primary Keys</a>
+  - <a href="http://postgresguide.com/performance/indexes.html">Postgres Guide: Indexes</a>
