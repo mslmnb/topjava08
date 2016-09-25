@@ -95,6 +95,8 @@
 
 -  Имплементация UserRepository через Spring Jdbc Template.
 
+> Вопрос по реализации `JdbcUserRepositoryImpl`: в `get` используется `query` а в `getByEmail` - `queryForObject`. Где правильно и почему?
+
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 9. <a href="https://drive.google.com/open?id=0B4dIHS3wRAhhQUJMMFU0VnRrUUE">Подготовка тестовых данных и тестирование UserService.</a>
 - **Apply 12-test-UserService.patch**
 
