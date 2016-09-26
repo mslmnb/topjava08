@@ -187,3 +187,19 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 5. Сделать индексы к таблице `Meals`.
   - <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">Postgres and Indexes on Foreign Keys and Primary Keys</a>
   - <a href="http://postgresguide.com/performance/indexes.html">Postgres Guide: Indexes</a>
+  
+  ---------------------
+### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Решение проблем
+> Из каталога `main` не видятся классы/ресурсы в `test`
+
+Все что находится в `test` используется только для тестов и недоступно в основном коде
+
+> Из `IDEA` не видятся ресурсы в каталоге `test`
+
+- Сделайте Reimport All в Maven окне
+![image](https://cloud.githubusercontent.com/assets/13649199/18831806/7e43bedc-83f0-11e6-97db-67d4e1a7599f.png)
+
+- Поставьте чекбокс `Check test files` в Inspections. Spring test контекст не надо включать в Spring Facets проекта.
+![image](https://cloud.githubusercontent.com/assets/13649199/18831817/8a858f22-83f0-11e6-837e-bf5317b33b3a.png)
+
+
