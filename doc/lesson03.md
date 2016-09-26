@@ -190,6 +190,19 @@ UNIQUE индекс нужен для обеcпечения уникальнос
   
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Решение проблем
 
+> В JUnit тестах проблама с кодировкой
+
+См. http://stackoverflow.com/a/17671104/548473, нужно в `pom.xml` в `plugins` добавить:
+
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>2.19.1</version>
+              <configuration>
+                  <argLine>-Dfile.encoding=UTF-8</argLine>
+              </configuration>
+          </plugin>
+
 > Из каталога `main` не видятся классы/ресурсы в `test`
 
 Все что находится в `test` используется только для тестов и недоступно в основном коде
