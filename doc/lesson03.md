@@ -197,9 +197,11 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 > Из `IDEA` не видятся ресурсы в каталоге `test`
 
 - Сделайте Reimport All в Maven окне
+
 ![image](https://cloud.githubusercontent.com/assets/13649199/18831806/7e43bedc-83f0-11e6-97db-67d4e1a7599f.png)
 
 - Поставьте чекбокс `Check test files` в Inspections. Spring test контекст не надо включать в Spring Facets проекта.
+
 ![image](https://cloud.githubusercontent.com/assets/13649199/18831817/8a858f22-83f0-11e6-837e-bf5317b33b3a.png)
 
 
