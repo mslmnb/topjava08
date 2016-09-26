@@ -188,8 +188,8 @@ UNIQUE индекс нужен для обеcпечения уникальнос
   - <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">Postgres and Indexes on Foreign Keys and Primary Keys</a>
   - <a href="http://postgresguide.com/performance/indexes.html">Postgres Guide: Indexes</a>
   
-  ---------------------
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Решение проблем
+
 > Из каталога `main` не видятся классы/ресурсы в `test`
 
 Все что находится в `test` используется только для тестов и недоступно в основном коде
