@@ -1,4 +1,4 @@
-package ru.javawebinar.topjava.util.exception;
+package ru.javawebinar.topjava.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.DefaultResourceLoader;
