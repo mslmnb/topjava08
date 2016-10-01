@@ -14,6 +14,7 @@ import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
 
 import javax.activation.DataSource;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -51,8 +52,8 @@ public class JdbcMealRepositoryImpl implements MealRepository {
             Number newKey = jdbcInsert.executeAndReturnKey(map);
             meal.setId(newKey.intValue());
         } else {
-            namedJdbcTemplate.query("UPDATE meals SET calories=:calories, description:=description, " +
-                    "datetime = :datetime, user_id = : user_id WHERE id =:id", map, ROW_MAPPER);
+            namedJdbcTemplate.update("UPDATE meals SET calories=:calories, description:=description, " +
+                    "datetime = :datetime, user_id = : user_id WHERE id =:id", map);
         }
         return meal ;
     }
@@ -86,7 +87,11 @@ public class JdbcMealRepositoryImpl implements MealRepository {
 
     @Override
     public List<Meal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId) {
-
-        return null;
+        SqlParameterSource map = new MapSqlParameterSource()
+                .addValue("startDate", Timestamp.valueOf(startDate))
+                .addValue("endDate",Timestamp.valueOf(endDate))
+                .addValue("userId",userId);
+        return namedJdbcTemplate.query("SELECT * FROM meals WHERE dateTime>=:startDate AND dateTime<endDate AND user_id=:userId" +
+                        " ORDER BY datetime DESC",map,ROW_MAPPER);
     }
 }
