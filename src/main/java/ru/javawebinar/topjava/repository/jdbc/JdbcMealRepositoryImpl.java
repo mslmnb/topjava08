@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.logging.Formatter;
+import java.sql.*;
 
 /**
  * User: gkislin
@@ -46,7 +46,7 @@ public class JdbcMealRepositoryImpl implements MealRepository {
         //System.out.println("удален " + mealRepository.delete(100006,100000));
         //System.out.println("удален " + mealRepository.delete(100007,100001));
 
-        //System.out.println("Еда 100012: " + mealRepository.get(100012,100000));
+        System.out.println("Еда 100012: " + mealRepository.get(100012,100000));
 
 /*        System.out.println("Еда пользователя 100000: ");
         System.out.println(mealRepository.getAll(100000));
@@ -56,7 +56,7 @@ public class JdbcMealRepositoryImpl implements MealRepository {
         System.out.println("Еда пользователя 100001 после удаления: ");
         System.out.println(mealRepository.getAll(100002));
 */
-        System.out.println(mealRepository.getBetween(LocalDateTime.MIN,LocalDateTime.MAX,2222));
+        //System.out.println(mealRepository.getBetween(LocalDateTime.now().minusDays(30),LocalDateTime.now().plusDays(30),2222));
     }
 
     @Autowired
@@ -120,11 +120,10 @@ public class JdbcMealRepositoryImpl implements MealRepository {
     public List<Meal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId) {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
-                .addValue("startDate",startDate.format(dateFormatter))
-                .addValue("endDate",endDate.toString())
+                .addValue("startDate", Timestamp.valueOf(startDate))
+                .addValue("endDate", Timestamp.valueOf(endDate))
                 .addValue("userId",userId);
-        namedParameterJdbcTemplate.query("SELECT * FROM meals WHERE (datetime BETWEEN '" + startDate.format(dateFormatter) +
-                    "' AND '" + endDate.format(dateFormatter) + "'",sqlParameterSource,ROW_MAPPER);
-        return null;
+        return namedParameterJdbcTemplate.query("SELECT * FROM meals WHERE datetime >= :startDate" +
+                    " AND datetime < :endDate" ,sqlParameterSource,ROW_MAPPER);
     }
 }
