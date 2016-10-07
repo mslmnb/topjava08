@@ -1,5 +1,6 @@
 package ru.javawebinar.topjava;
 
+import org.junit.Rule;
 import ru.javawebinar.topjava.matcher.ModelMatcher;
 import ru.javawebinar.topjava.model.Meal;
 
@@ -15,6 +16,8 @@ import static ru.javawebinar.topjava.model.BaseEntity.START_SEQ;
  * 13.03.2015.
  */
 public class MealTestData {
+
+
 
     public static final ModelMatcher<Meal> MATCHER = new ModelMatcher<>();
 

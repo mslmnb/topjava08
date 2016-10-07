@@ -15,12 +15,12 @@ import java.time.LocalTime;
  */
 
     @NamedQueries({
-        @NamedQuery(name=Meal.DELETE, query="DELETE FROM Meal m WHERE m.id = :id"),
+        @NamedQuery(name=Meal.DELETE, query="DELETE FROM Meal m WHERE m.id = :id AND m.user.id = :userId"),
         @NamedQuery(name=Meal.BY_USER_ID, query = "SELECT m FROM Meal m  WHERE m.id = :id AND m.user.id = :userId"),
         @NamedQuery(name=Meal.FILTERED_AND_SORTED, query = "SELECT m FROM Meal m " +
                             "WHERE m.user.id = :userId AND m.dateTime >= :startDateTime AND m.dateTime<:endDateTime " +
                             "ORDER BY m.dateTime DESC" ),
-        @NamedQuery(name=Meal.ALL_SORTED, query="SELECT m FROM Meal m WHERE m.user.id = :userId ORDER BY m.dateTime"),
+        @NamedQuery(name=Meal.ALL_SORTED, query="SELECT m FROM Meal m WHERE m.user.id = :userId ORDER BY m.dateTime DESC"),
     }
     )
 @Entity
@@ -45,7 +45,7 @@ public class Meal extends BaseEntity {
     @Digits(integer = 4, fraction = 0)
     private int calories;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
     public Meal() {
