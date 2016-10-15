@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 @Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
 @ActiveProfiles(Profiles.ACTIVE_DB)
 
-abstract public class AbstractService {
+abstract public class AbstractServiceTest {
     private static final Logger LOG = LoggerFactory.getLogger(AbstractMealServiceTest.class);
 
     @Rule
