@@ -1,5 +1,7 @@
 package ru.javawebinar.topjava.model;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -21,6 +23,7 @@ import java.util.Set;
         @NamedQuery(name = User.BY_EMAIL, query = "SELECT u FROM User u LEFT JOIN FETCH u.roles WHERE u.email=?1"),
         @NamedQuery(name = User.ALL_SORTED, query = "SELECT u FROM User u LEFT JOIN FETCH u.roles ORDER BY u.name, u.email"),
 })
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Entity
 @Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = "email", name = "users_unique_email_idx")})
 public class User extends NamedEntity {
@@ -32,28 +35,29 @@ public class User extends NamedEntity {
     @Column(name = "email", nullable = false, unique = true)
     @Email
     @NotEmpty
-    protected String email;
+    private String email;
 
     @Column(name = "password", nullable = false)
     @NotEmpty
     @Length(min = 5)
-    protected String password;
+    private String password;
 
     @Column(name = "enabled", nullable = false)
-    protected boolean enabled = true;
+    private boolean enabled = true;
 
     @Column(name = "registered", columnDefinition = "timestamp default now()")
-    protected Date registered = new Date();
+    private Date registered = new Date();
 
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
     @ElementCollection(fetch = FetchType.LAZY)
-    protected Set<Role> roles;
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Role> roles;
 
     @Column(name = "calories_per_day", columnDefinition = "default 2000")
     @Digits(fraction = 0, integer = 4)
-    protected int caloriesPerDay = MealsUtil.DEFAULT_CALORIES_PER_DAY;
+    private int caloriesPerDay = MealsUtil.DEFAULT_CALORIES_PER_DAY;
 
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "user")
     @OrderBy("dateTime DESC")

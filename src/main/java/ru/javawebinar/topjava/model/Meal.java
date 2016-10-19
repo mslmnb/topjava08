@@ -44,7 +44,7 @@ public class Meal extends BaseEntity {
     protected int calories;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false) // user_id это внешний ключ в БД meals
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public Meal() {
