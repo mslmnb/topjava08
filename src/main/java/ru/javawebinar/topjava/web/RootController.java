@@ -24,9 +24,6 @@ public class RootController {
     @Autowired
     private MealService mealService;
 
-    @Autowired
-    private MealService mealService;
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root() {
         return "index";
