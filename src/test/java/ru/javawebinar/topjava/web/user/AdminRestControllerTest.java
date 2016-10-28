@@ -29,7 +29,7 @@ public class AdminRestControllerTest extends AbstractControllerTest {
                 .andDo(print())
 // https://jira.spring.io/browse/SPR-14472
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(MATCHER.contentMatcher(ADMIN));
+                .andExpect(MATCHER.contentMatcher(ADMIN));//
     }
 
     @Test
